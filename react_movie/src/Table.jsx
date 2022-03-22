@@ -1,6 +1,8 @@
 // import React from "react";
 import Pagination from "./Pagination";
 
+import './Table.css';
+
 let Table = (props) => {
     // console.log(props.moviedata);
     // console.log(props);
@@ -17,6 +19,8 @@ let Table = (props) => {
             return el;
         }
     })
+
+    let DisplayedMovies = filteredMovies.slice(0,4);
     return (
         <>
         <div className="row">
@@ -33,14 +37,14 @@ let Table = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {filteredMovies.map((el)=>{
+                        {DisplayedMovies.map((el)=>{
                             return <tr key={el._id}>
                                 <td>{el.title}</td>
                                 <td>{el.genre.name}</td>
                                 <td>{el.numberInStock}</td>
                                 <td>{el.dailyRentalRate}</td>
                                 <td>like</td>
-                                <td><button>Delete</button></td>
+                                <td><button className="delete-btn">Delete</button></td>
                             </tr>
                         })}
                         {/* <tr>
