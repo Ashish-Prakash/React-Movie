@@ -16,8 +16,6 @@ let Table = (props) => {
       return el;
     } else if (el.genre.name === currentmovie) {
       return el;
-    }else{
-      // return el;
     }
   });
 

@@ -34,7 +34,7 @@ class Movie extends React.Component {
 
   deleteMovie = (movieId) => {
     let moviesAfterDel = this.state.movies.filter((el) => {
-      return el._id != movieId;
+      return el._id !== movieId;
     });
     this.setState({ movies: moviesAfterDel });
   };
@@ -64,7 +64,7 @@ class Movie extends React.Component {
             selected={this.state.selectedGenre}
           />
           <div className="col-9 p-4">
-            <TextnNew />
+            <TextnNew totalMovies ={this.state.movies.length} />
             <Search />
             <Table
               selected={this.state.selectedGenre}
