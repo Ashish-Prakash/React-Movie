@@ -16,6 +16,21 @@ class Movie extends React.Component {
       selectedGenre: filter,
     });
   };
+  toggleLike = (movieId) => {
+    let idx = this.state.movies.findIndex((el) => {
+      return el._id === movieId;
+    });
+    let currentMovieArr = this.state.movies.map((el) => el);
+
+    if (currentMovieArr[idx].liked) {
+      currentMovieArr[idx].liked = false;
+    } else {
+      currentMovieArr[idx].liked = true;
+    }
+    this.setState({
+      movies: currentMovieArr,
+    });
+  };
 
   componentDidMount() {
     let f = async () => {
@@ -47,6 +62,7 @@ class Movie extends React.Component {
             <Table
               selected={this.state.selectedGenre}
               moviedata={this.state.movies}
+              toggleLike={this.toggleLike}
             />
           </div>
         </div>
