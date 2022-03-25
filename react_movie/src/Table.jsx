@@ -61,7 +61,9 @@ let Table = (props) => {
                       )}
                     </td>
                     <td>
-                      <button className="delete-btn">Delete</button>
+                      <button onClick={()=>{
+                        props.deleteMovie(el._id);
+                      }} className="delete-btn">Delete</button>
                     </td>
                   </tr>
                 );

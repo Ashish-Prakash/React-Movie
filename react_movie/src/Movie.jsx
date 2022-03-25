@@ -32,6 +32,13 @@ class Movie extends React.Component {
     });
   };
 
+  deleteMovie = (movieId) => {
+    let moviesAfterDel = this.state.movies.filter((el) => {
+      return el._id != movieId;
+    });
+    this.setState({ movies: moviesAfterDel });
+  };
+
   componentDidMount() {
     let f = async () => {
       let movie = await fetch("/movies");
@@ -63,6 +70,7 @@ class Movie extends React.Component {
               selected={this.state.selectedGenre}
               moviedata={this.state.movies}
               toggleLike={this.toggleLike}
+              deleteMovie={this.deleteMovie}
             />
           </div>
         </div>
