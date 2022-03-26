@@ -64,7 +64,7 @@ class Movie extends React.Component {
             selected={this.state.selectedGenre}
           />
           <div className="col-9 p-4">
-            <TextnNew totalMovies ={this.state.movies.length} />
+            <TextnNew totalMovies={this.state.movies.length} />
             <Search />
             <Table
               selected={this.state.selectedGenre}
