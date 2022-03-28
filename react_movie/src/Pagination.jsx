@@ -10,6 +10,7 @@ let Pagination = (props) => {
           {noOfPages.map((el) => {
             return (
               <li
+                key={el}
                 onClick={() => {
                   props.selectPage(el);
                 }}

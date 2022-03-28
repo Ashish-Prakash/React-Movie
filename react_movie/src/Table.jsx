@@ -27,6 +27,12 @@ class Table extends React.Component {
         return el;
       }
     });
+    filteredMovies = filteredMovies.filter((el) => {
+      let movietitle = el.title;
+      movietitle = movietitle.toLowerCase();
+      let string = this.props.search.toLowerCase();
+      return movietitle.includes(string);
+    });
     let totalPages = Math.ceil(filteredMovies.length / 4);
     let startIdx = (this.state.currentPage - 1) * 4;
     let endIdx = Math.min(filteredMovies.length, this.state.currentPage * 4);

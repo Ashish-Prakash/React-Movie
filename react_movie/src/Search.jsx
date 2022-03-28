@@ -1,4 +1,4 @@
-let Search = () => {
+let Search = (props) => {
   return (
     <div className="row">
       <div className="col-4">
@@ -7,8 +7,10 @@ let Search = () => {
             type="text"
             className="form-control"
             placeholder="Search..."
-            aria-label="Username"
-            aria-describedby="addon-wrapping"
+            value={props.search}
+            onChange={(e) => {
+              props.searchMovie(e.currentTarget.value);
+            }}
           />
         </div>
       </div>
